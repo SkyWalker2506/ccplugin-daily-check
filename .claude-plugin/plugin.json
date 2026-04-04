@@ -3,7 +3,7 @@
   "description": "Daily system health check — Ollama models, MCP servers, API keys, disk/RAM usage, token cost report. Runs on startup or via cron.",
   "version": "1.0.0",
   "author": {
-    "name": "SkyWalker2506",
+    "name": "Musab Kara",
     "url": "https://github.com/SkyWalker2506"
   },
   "homepage": "https://github.com/SkyWalker2506/claude-config",
