@@ -1,6 +1,6 @@
 ---
 name: daily-check
-description: This skill activates when the user asks about "system health", "daily check", "Ollama status", "MCP health", "disk usage", "token budget", "API keys working", or "is everything running". Also triggers at session start if the last check was more than 24 hours ago.
+description: This skill activates when the user asks about "system health", "daily check", "Ollama status", "MCP health", "disk usage", "token budget", "API keys working", or "is everything running". Also triggers at session start if the last check was more than 24 hours ago (CC-15: auto-trigger when `~/.watchdog/daily_report.json` timestamp > 24h old or missing).
 version: 1.0.0
 ---
 
@@ -18,7 +18,7 @@ Automated daily system health monitoring for Claude Code setups.
 | Disk | Usage % on home drive |
 | RAM | Available memory |
 | Token Usage | Claude API usage vs quota |
-| Agent Registry | sync_agents.py --check |
+| Agent Registry | `sync_agents.py --check` — drift detection |
 
 ## Report Location
 
