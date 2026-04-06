@@ -36,8 +36,6 @@ If cron is set up (via `install.sh` Phase 11), runs daily at 09:00:
 0 9 * * * bash ~/.claude/config/daily-check.sh >> ~/.watchdog/daily.log 2>&1
 ```
 
-Also auto-triggers at session start if the last check was more than 24 hours ago.
-
 ## Alerts
 
 If critical issues are found (Ollama down, API key expired, disk >90%):
@@ -51,4 +49,5 @@ Results saved to `~/.watchdog/daily_report.json` and logged in `~/.watchdog/dail
 ## Part of
 
 - [claude-config](https://github.com/SkyWalker2506/claude-config) — Multi-Agent OS for Claude Code (134 agents, local-first routing)
-- [Plugin Marketplace](https://github.com/SkyWalker2506/claude-marketplace) — Browse & install all 14 plugins
+- [Plugin Marketplace](https://github.com/SkyWalker2506/claude-marketplace) — Browse & install all 18 plugins
+- [ClaudeHQ](https://github.com/SkyWalker2506/ClaudeHQ) — Claude ecosystem HQ
