@@ -15,6 +15,7 @@ claude plugin install daily-check@musabkara-claude-marketplace
 | Command | Description |
 |---------|-------------|
 | `/daily-check` | Run health check now |
+| `/daily-check-reset` | Clear cached report + run fresh check |
 
 ## What It Checks
 
