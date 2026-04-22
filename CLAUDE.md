@@ -1,15 +1,34 @@
-# ccplugin-daily-check — Yönlendirici
+# ccplugin-daily-check
 
-> **Bu dosya sadece yönlendiricidir.** Tüm kurallar `~/Projects/claude-config/CLAUDE.md` dosyasındadır.
+> See global rules: `~/Projects/claude-config/CLAUDE.md`
 
----
+## Project
 
-## Her oturum başında
+Daily system health check plugin for Claude Code.
 
-1. **`~/Projects/claude-config/CLAUDE.md` dosyasını oku** ve talimatlarını uygula
-2. Yanıt başında model etiketi: `(Model Adı)`
-3. Dil: kullanıcıya Türkçe; kod/commit İngilizce
+**Repo:** https://github.com/SkyWalker2506/ccplugin-daily-check  
+**Version:** 1.2.0
 
-## Değişiklik
+## Commands
 
-Proje kurallarını değiştirmek için `~/Projects/claude-config/` reposunda düzenle → `./install.sh` çalıştır.
+- `/daily-check` — run health check now
+- `/daily-check-reset` — clear cached report + run fresh check
+
+## Key Files
+
+- `commands/daily-check.md` — main command with pre-flight checks + CC-14/CC-15
+- `commands/daily-check-reset.md` — reset command
+- `skills/daily-check/SKILL.md` — auto-trigger skill (CC-15)
+- `.claude-plugin/plugin.json` — plugin metadata
+- `install.sh` — validates dependencies (requires claude-config)
+
+## External Dependencies
+
+- `~/.claude/config/daily-check.sh` — script from claude-config repo
+- `~/.watchdog/` — output directory for reports and logs
+- Optional: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` in secrets.env
+
+## Design Decision
+
+This plugin is a thin wrapper around `daily-check.sh` from claude-config.
+The script is not duplicated here to avoid divergence.
