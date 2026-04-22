@@ -51,3 +51,25 @@ Results saved to `~/.watchdog/daily_report.json` and logged in `~/.watchdog/dail
 - [claude-config](https://github.com/SkyWalker2506/claude-config) — Multi-Agent OS for Claude Code (134 agents, local-first routing)
 - [Plugin Marketplace](https://github.com/SkyWalker2506/claude-marketplace) — Browse & install all 18 plugins
 - [ClaudeHQ](https://github.com/SkyWalker2506/ClaudeHQ) — Claude ecosystem HQ
+
+## Telegram Alert Setup
+
+To receive alerts when critical issues are found:
+
+1. Create a Telegram bot via [@BotFather](https://t.me/BotFather)
+2. Get your chat ID via [@userinfobot](https://t.me/userinfobot)
+3. Add to `~/.claude/secrets/secrets.env`:
+   ```
+   TELEGRAM_BOT_TOKEN=your-bot-token
+   TELEGRAM_CHAT_ID=your-chat-id
+   ```
+4. `daily-check.sh` reads these automatically
+
+## Troubleshooting
+
+| Problem | Solution |
+|---------|---------|
+| `daily-check.sh not found` | Run `cd ~/Projects/claude-config && bash ./install.sh` first |
+| `~/.watchdog/ not found` | Run `bash install.sh` in this plugin's directory |
+| Ollama check fails | Ensure Ollama is running: `ollama serve` |
+| `sync_agents.py` not found | Run `cd ~/Projects/claude-config && git pull` |
