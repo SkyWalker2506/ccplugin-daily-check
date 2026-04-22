@@ -1,7 +1,7 @@
 {
   "name": "daily-check",
   "description": "Daily system health check — Ollama models, MCP servers, API keys, disk/RAM usage, token cost report. Runs on startup or via cron.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "Musab Kara",
     "url": "https://github.com/SkyWalker2506"
@@ -12,7 +12,8 @@
   "category": "ops",
   "keywords": ["health-check", "monitoring", "ollama", "mcp", "daily", "ops", "system"],
   "commands": [
-    {"name": "daily-check", "path": "commands/daily-check.md"}
+    {"name": "daily-check", "path": "commands/daily-check.md"},
+    {"name": "daily-check-reset", "path": "commands/daily-check-reset.md"}
   ],
   "skills": [
     {"name": "daily-check", "path": "skills/daily-check/SKILL.md"}
