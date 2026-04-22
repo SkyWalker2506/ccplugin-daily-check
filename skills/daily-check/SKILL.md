@@ -57,3 +57,4 @@ If critical issues found (Ollama down, API key expired, disk >90%):
 - Sends Telegram notification if bot is running
 - Logs to `~/.watchdog/alerts.log`
 | Reset | reset daily check, force fresh check, clear daily report | `/daily-check-reset` |
+| Summary | show last report, last check results, what was the result | `/daily-check-summary` |
