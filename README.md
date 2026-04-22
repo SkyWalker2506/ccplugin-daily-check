@@ -16,6 +16,7 @@ claude plugin install daily-check@musabkara-claude-marketplace
 |---------|-------------|
 | `/daily-check` | Run health check now |
 | `/daily-check-reset` | Clear cached report + run fresh check |
+| `/daily-check-summary` | Show last report without re-running |
 
 ## What It Checks
 
