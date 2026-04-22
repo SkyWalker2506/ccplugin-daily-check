@@ -1,12 +1,24 @@
 ---
 name: daily-check
-description: This skill activates when the user asks about "system health", "daily check", "Ollama status", "MCP health", "disk usage", "token budget", "API keys working", or "is everything running". Also triggers at session start if the last check was more than 24 hours ago (CC-15: auto-trigger when `~/.watchdog/daily_report.json` timestamp > 24h old or missing).
-version: 1.0.0
+description: "This skill activates when the user asks about: system health, daily check, Ollama status, MCP health, disk usage, disk space, RAM check, available memory, token budget, token usage, API keys working, is everything running, health status, check system. Also triggers at session start if the last check was more than 24 hours ago (CC-15: auto-trigger when ~/.watchdog/daily_report.json timestamp > 24h old or missing)."
+version: 1.1.0
 ---
 
 # Daily Health Check Skill
 
 Automated daily system health monitoring for Claude Code setups.
+
+## Trigger Phrases
+
+| Intent | Phrases | Routes To |
+|--------|---------|-----------|
+| Full check | daily check, system health, is everything running, health status | `/daily-check` |
+| Ollama | ollama status, is ollama running, ollama models | `/daily-check` |
+| MCP | MCP health, MCP status, are MCPs working | `/daily-check` |
+| Disk | disk usage, disk space, how much disk | `/daily-check` |
+| RAM | RAM check, available memory, how much memory | `/daily-check` |
+| Tokens | token budget, token usage, API usage | `/daily-check` |
+| API Keys | API keys working, are keys valid | `/daily-check` |
 
 ## What It Checks
 
