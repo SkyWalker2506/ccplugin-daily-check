@@ -9,7 +9,28 @@ Run the system health check script.
 
 ## Instructions
 
-Execute: `bash ~/.claude/config/daily-check.sh`
+### Pre-flight: Verify dependencies
+
+```bash
+DAILY_CHECK="$HOME/.claude/config/daily-check.sh"
+WATCHDOG="$HOME/.watchdog"
+
+# Ensure watchdog directory exists
+mkdir -p "$WATCHDOG"
+
+# Check if script exists
+if [ ! -f "$DAILY_CHECK" ]; then
+  echo "❌ daily-check.sh not found at $DAILY_CHECK"
+  echo "   Fix: cd ~/Projects/claude-config && bash ./install.sh"
+  exit 1
+fi
+```
+
+### Execute
+
+```bash
+bash ~/.claude/config/daily-check.sh
+```
 
 If the script doesn't exist, inform the user to run `./install.sh` in their claude-config repo.
 
