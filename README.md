@@ -73,3 +73,39 @@ To receive alerts when critical issues are found:
 | `~/.watchdog/ not found` | Run `bash install.sh` in this plugin's directory |
 | Ollama check fails | Ensure Ollama is running: `ollama serve` |
 | `sync_agents.py` not found | Run `cd ~/Projects/claude-config && git pull` |
+
+## Example Report
+
+Sample `~/.watchdog/daily_report.json`:
+
+```json
+{
+  "timestamp": 1745312400,
+  "date": "2026-04-22T09:00:00",
+  "status": "ok",
+  "checks": {
+    "ollama": {"status": "ok", "models": ["llama3.2", "qwen3"], "response_ms": 142},
+    "mcp": {"status": "ok", "servers": ["github", "atlassian", "git"]},
+    "api_keys": {"claude": "ok", "github": "ok", "openrouter": "missing"},
+    "disk": {"status": "ok", "usage_pct": 67},
+    "ram": {"status": "ok", "available_gb": 12.4},
+    "token_usage": {"status": "ok", "used": 42000, "limit": 100000},
+    "agent_registry": {"status": "ok", "drift": false}
+  }
+}
+```
+
+## Session Auto-Trigger (CC-15)
+
+At session start, Claude checks if the last daily report is older than 24 hours:
+
+- Report exists and is fresh → no action
+- Report is >24h old or missing → auto-run `daily-check.sh` and show results
+
+To force a fresh check (reset the 24h timer), delete the report:
+
+```bash
+rm ~/.watchdog/daily_report.json
+```
+
+Then start a new Claude session — the check will run automatically.
