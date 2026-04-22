@@ -6,8 +6,15 @@
     "name": "Musab Kara",
     "url": "https://github.com/SkyWalker2506"
   },
-  "homepage": "https://github.com/SkyWalker2506/claude-config",
-  "repository": "https://github.com/SkyWalker2506/claude-plugins",
+  "homepage": "https://github.com/SkyWalker2506/ccplugin-daily-check",
+  "repository": "https://github.com/SkyWalker2506/ccplugin-daily-check",
   "license": "MIT",
-  "keywords": ["health-check", "monitoring", "ollama", "mcp", "daily", "ops", "system"]
+  "category": "ops",
+  "keywords": ["health-check", "monitoring", "ollama", "mcp", "daily", "ops", "system"],
+  "commands": [
+    {"name": "daily-check", "path": "commands/daily-check.md"}
+  ],
+  "skills": [
+    {"name": "daily-check", "path": "skills/daily-check/SKILL.md"}
+  ]
 }
